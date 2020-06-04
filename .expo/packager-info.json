@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 7939,
+  "expoServerNgrokUrl": "https://cw-kip.anonymous.codered.exp.direct",
+  "packagerNgrokUrl": "https://packager.cw-kip.anonymous.codered.exp.direct",
+  "ngrokPid": 8024,
+  "webpackServerPort": null
+}

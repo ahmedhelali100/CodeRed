@@ -28,9 +28,11 @@ export default ({ navigation }) => (
         navigation.navigate("CodeRed", {
           title: "Activate CodeRed",
           questions: activateCodeRed,
-          color: "#49475B"
+          color: "#49475B",
+          width:50
         })
       }
     />
   </ScrollView>
+
 );
