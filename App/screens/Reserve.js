@@ -1,6 +1,7 @@
 import React from 'react';
 import { createAppContainer } from "react-navigation";
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity ,ScrollView, StatusBar} from 'react-native';
+import { RowItem } from "../components/RowItem";
 
 export default class App extends React.Component {
   state={
@@ -10,29 +11,15 @@ export default class App extends React.Component {
   }
   render(){
     return (
-      <View style={styles.container}>
-        <Text style={styles.logo}>CodeRed</Text>
-        <View style={styles.inputView} >
-          <TextInput
-            style={styles.inputText}
-            placeholder="Email..."
-            placeholderTextColor="#003f5c"
-            onChangeText={text => this.setState({email:text})}/>
-        </View>
-        <TouchableOpacity style={styles.loginBtn}
-        onPress={() =>
-            this.props.navigation.navigate('Reset')
-          }>
-          <Text style={styles.loginText}>RESET</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-        onPress={() =>
-            this.props.navigation.navigate('Login')
-          }>
-          <Text style={styles.loginText}>Login</Text>
-        </TouchableOpacity>
-
-
+      <View style={styles.container1}>
+      <View style={{margin: 1,
+                    height: 500,
+                    backgroundColor:"#465881"}}>
+        <RowItem
+          name="Reserve Bus"
+          color="#799496"
+            />
+            </View>
       </View>
     );
   }
@@ -40,6 +27,12 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: '#003f5c',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  container1: {
     flex: 1,
     backgroundColor: '#003f5c',
     alignItems: 'center',
