@@ -6,12 +6,20 @@ import CodeRed from "./screens/CodeRed";
 import Login from "./screens/Login";
 import Signup from "./screens/Signup";
 import ForgetPass from "./screens/ForgetPass";
+import Reset from "./screens/Reset";
+import Main from "./screens/Main";
+import Detect from "./screens/Detect";
+import Reserve from "./screens/Reserve";
 
 
 const MainStack = createStackNavigator({
 Login: {screen: Login},
 Signup: {screen: Signup},
-ForgetPass: {screen: ForgetPass}
+ForgetPass: {screen: ForgetPass},
+Reset: {screen: Reset},
+Main: {screen: Main},
+Reserve: {screen: Reserve},
+Detect : {screen: Detect},
 },{headerMode: 'none'});
 export default createAppContainer(MainStack);
 

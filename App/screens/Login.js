@@ -3,6 +3,7 @@ import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { Button, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Signup from "./Signup";
+import auth from '@react-native-firebase/auth'
 
 export default class App extends React.Component {
   state={
@@ -34,7 +35,9 @@ export default class App extends React.Component {
           }>
           <Text style={styles.forgot}>Forgot Password?</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.loginBtn}>
+        <TouchableOpacity style={styles.loginBtn} onPress={() =>
+            this.props.navigation.navigate('Main')
+          }>
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>
 
@@ -54,19 +57,19 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#02a61d',
+    backgroundColor: '#003f5c',
     alignItems: 'center',
     justifyContent: 'center',
   },
   logo:{
     fontWeight:"bold",
     fontSize:50,
-    color:"#fb5b5a",
+    color:"#e80505",
     marginBottom:40
   },
   inputView:{
     width:"80%",
-    backgroundColor:"#04d927",
+    backgroundColor:"#465881",
     borderRadius:25,
     height:50,
     marginBottom:20,
@@ -83,7 +86,7 @@ const styles = StyleSheet.create({
   },
   loginBtn:{
     width:"80%",
-    backgroundColor:"#fb5b5a",
+    backgroundColor:"#e80505",
     borderRadius:25,
     height:50,
     alignItems:"center",

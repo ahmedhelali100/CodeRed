@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 7939,
-  "expoServerNgrokUrl": "https://cw-kip.anonymous.codered.exp.direct",
-  "packagerNgrokUrl": "https://packager.cw-kip.anonymous.codered.exp.direct",
-  "ngrokPid": 8024,
+  "packagerPid": 30154,
+  "expoServerNgrokUrl": "https://wh-dav.anonymous.codered.exp.direct",
+  "packagerNgrokUrl": "https://packager.wh-dav.anonymous.codered.exp.direct",
+  "ngrokPid": 30250,
   "webpackServerPort": null
 }

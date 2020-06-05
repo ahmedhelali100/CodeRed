@@ -1,12 +1,30 @@
 import React from 'react';
 import { createAppContainer } from "react-navigation";
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { db } from './config';
+
+/*let addUser = item => {
+  db.ref('users/'+userId).push({
+    enumber: item1,
+    email: item2,
+    password: item3,
+  });
+};*/
+
 
 export default class App extends React.Component {
   state={
     enumber:"",
     email:"",
-    password:""
+    password:"",
+    errorMessage: null
+  }
+  handleSignUp = () => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(this.state.email, this.state.password, this.state.enumber)
+      .then(() => this.props.navigation.navigate('Main'))
+      .catch(error => this.setState({ errorMessage: error.message }))
   }
   render(){
     return (
@@ -34,7 +52,10 @@ export default class App extends React.Component {
             placeholderTextColor="#003f5c"
             onChangeText={text => this.setState({password:text})}/>
         </View>
-        <TouchableOpacity style={styles.loginBtn}>
+        <TouchableOpacity style={styles.loginBtn}
+        onPress={() =>
+            this.props.navigation.navigate('Main')
+          }>
           <Text style={styles.loginText}>SIGNUP</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -53,19 +74,19 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#02a61d',
+    backgroundColor: '#003f5c',
     alignItems: 'center',
     justifyContent: 'center',
   },
   logo:{
     fontWeight:"bold",
     fontSize:50,
-    color:"#fb5b5a",
+    color:"#e80505",
     marginBottom:40
   },
   inputView:{
     width:"80%",
-    backgroundColor:"#04d927",
+    backgroundColor:"#465881",
     borderRadius:25,
     height:50,
     marginBottom:20,
@@ -82,7 +103,7 @@ const styles = StyleSheet.create({
   },
   loginBtn:{
     width:"80%",
-    backgroundColor:"#fb5b5a",
+    backgroundColor:"#e80505",
     borderRadius:25,
     height:50,
     alignItems:"center",
